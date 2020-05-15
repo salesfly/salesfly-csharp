@@ -1,0 +1,8 @@
+language: csharp
+mono: none
+dotnet: 3.0.100
+
+script:
+  - dotnet build ./Salesfly/
+#  - dotnet build ./Salesfly.Tests/
+#  - dotnet test ./Salesfly.Tests/
