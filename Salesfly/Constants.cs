@@ -5,7 +5,7 @@ namespace Salesfly
         ///
         /// Client version.
         ///
-        public static string VERSION = "1.0.1";
+        public static string VERSION = "1.0.2";
 
         ///
         /// Live API URL
