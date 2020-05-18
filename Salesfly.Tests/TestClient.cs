@@ -60,6 +60,20 @@ namespace Salesfly.Tests
             }
         }
 
+        [TestMethod]
+        public async Task CreatePDF()
+        {
+            var options = new PDFOptions();
+            var now = DateTime.Now;
+            options.DocumentHTML = $"<html>This is a test from C# API client at {now}</html>";
+
+            var buf = await Api.PDF.CreateAsync(options);
+            Assert.IsNotNull(buf);
+
+            File.WriteAllBytes("/tmp/pdf-sharp.pdf", buf);
+        }
+
+
         /*        [TestMethod]
                 public async Task GetLocation()
                 {
@@ -176,17 +190,5 @@ namespace Salesfly.Tests
                     Spew.Dump(res);
                 } */
 
-        [TestMethod]
-        public async Task CreatePDF()
-        {
-            var options = new PDFOptions();
-            var now = DateTime.Now;
-            options.DocumentHTML = $"<html>This is a test from C# API client at {now}</html>";
-
-            var buf = await Api.PDF.CreateAsync(options);
-            Assert.IsNotNull(buf);
-
-            File.WriteAllBytes("/tmp/pdf-sharp.pdf", buf);
-        }
     }
 }

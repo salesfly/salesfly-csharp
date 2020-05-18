@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -296,7 +297,158 @@ namespace Salesfly.Api
                 jsonObject.Add(new JProperty("document_html", this.DocumentHTML));
             }
 
-            //FIXME: add all params
+            if (!string.IsNullOrEmpty(this.DocumentName))
+            {
+                jsonObject.Add(new JProperty("document_name", this.DocumentName));
+            }
+            if (!string.IsNullOrEmpty(this.MarginTop))
+            {
+                jsonObject.Add(new JProperty("margin_top", this.MarginTop));
+            }
+            if (!string.IsNullOrEmpty(this.MarginBottom))
+            {
+                jsonObject.Add(new JProperty("margin_bottom", this.MarginBottom));
+            }
+            if (!string.IsNullOrEmpty(this.MarginLeft))
+            {
+                jsonObject.Add(new JProperty("margin_left", this.MarginLeft));
+            }
+            if (!string.IsNullOrEmpty(this.MarginRight))
+            {
+                jsonObject.Add(new JProperty("margin_right", this.MarginRight));
+            }
+            if (!string.IsNullOrEmpty(this.Orientation))
+            {
+                jsonObject.Add(new JProperty("orientation", this.Orientation));
+            }
+            if (!string.IsNullOrEmpty(this.PageFormat))
+            {
+                jsonObject.Add(new JProperty("page_format", this.PageFormat));
+            }
+            if (!string.IsNullOrEmpty(this.PageWidth))
+            {
+                jsonObject.Add(new JProperty("page_width", this.PageWidth));
+            }
+            if (!string.IsNullOrEmpty(this.PageHeight))
+            {
+                jsonObject.Add(new JProperty("page_height", this.PageHeight));
+            }
+            if (!string.IsNullOrEmpty(this.PageRanges))
+            {
+                jsonObject.Add(new JProperty("page_ranges", this.PageRanges));
+            }
+
+            if (this.Scale >= 0.1 && this.Scale <= 2.0)
+            {
+                jsonObject.Add(new JProperty("scale", this.Scale));
+            }
+
+            if (!string.IsNullOrEmpty(this.HeaderText))
+            {
+                jsonObject.Add(new JProperty("header_text", this.HeaderText));
+            }
+            if (!string.IsNullOrEmpty(this.HeaderAlign))
+            {
+                jsonObject.Add(new JProperty("header_align", this.HeaderAlign));
+            }
+            if (this.HeaderMargin > 0)
+            {
+                jsonObject.Add(new JProperty("header_margin", this.HeaderMargin));
+            }
+            if (!string.IsNullOrEmpty(this.HeaderHTML))
+            {
+                jsonObject.Add(new JProperty("header_html", this.HeaderHTML));
+            }
+            if (!string.IsNullOrEmpty(this.HeaderURL))
+            {
+                jsonObject.Add(new JProperty("header_url", this.HeaderURL));
+            }
+            if (!string.IsNullOrEmpty(this.FooterText))
+            {
+                jsonObject.Add(new JProperty("footer_text", this.FooterText));
+            }
+            if (!string.IsNullOrEmpty(this.FooterAlign))
+            {
+                jsonObject.Add(new JProperty("footer_align", this.FooterAlign));
+            }
+            if (this.FooterMargin > 0)
+            {
+                jsonObject.Add(new JProperty("footer_margin", this.FooterMargin));
+            }
+            if (!string.IsNullOrEmpty(this.FooterHTML))
+            {
+                jsonObject.Add(new JProperty("footer_html", this.FooterHTML));
+            }
+            if (!string.IsNullOrEmpty(this.FooterURL))
+            {
+                jsonObject.Add(new JProperty("footer_url", this.FooterURL));
+            }
+            if (this.PrintBackground)
+            {
+                jsonObject.Add(new JProperty("print_background", this.PrintBackground));
+            }
+            if (this.PreferCSSPageSize)
+            {
+                jsonObject.Add(new JProperty("prefer_css_page_size", this.PreferCSSPageSize));
+            }
+            if (!string.IsNullOrEmpty(this.WatermarkURL))
+            {
+                jsonObject.Add(new JProperty("watermark_url", this.WatermarkURL));
+            }
+            if (!string.IsNullOrEmpty(this.WatermarkPosition))
+            {
+                jsonObject.Add(new JProperty("watermark_position", this.WatermarkPosition));
+            }
+            if (this.WatermarkOffsetX > 0)
+            {
+                jsonObject.Add(new JProperty("watermark_offset_x", this.WatermarkOffsetX));
+            }
+            if (this.WatermarkOffsetY > 0)
+            {
+                jsonObject.Add(new JProperty("watermark_offset_y", this.WatermarkOffsetY));
+            }
+            if (!string.IsNullOrEmpty(this.Title))
+            {
+                jsonObject.Add(new JProperty("title", this.Title));
+            }
+            if (!string.IsNullOrEmpty(this.Author))
+            {
+                jsonObject.Add(new JProperty("author", this.Author));
+            }
+            if (!string.IsNullOrEmpty(this.Creator))
+            {
+                jsonObject.Add(new JProperty("creator", this.Creator));
+            }
+            if (!string.IsNullOrEmpty(this.Subject))
+            {
+                jsonObject.Add(new JProperty("subject", this.Subject));
+            }
+            if (this.Keywords != null)
+            {
+                jsonObject.Add(new JProperty("keywords", this.Keywords));
+            }
+            if (!string.IsNullOrEmpty(this.Language))
+            {
+                jsonObject.Add(new JProperty("language", this.Language));
+            }
+            if (!string.IsNullOrEmpty(this.Encryption))
+            {
+                jsonObject.Add(new JProperty("encryption", this.Encryption));
+            }
+            if (!string.IsNullOrEmpty(this.OwnerPassword))
+            {
+                jsonObject.Add(new JProperty("owner_password", this.OwnerPassword));
+            }
+            if (!string.IsNullOrEmpty(this.UserPassword))
+            {
+                jsonObject.Add(new JProperty("user_password", this.UserPassword));
+            }
+            if (!string.IsNullOrEmpty(this.Permissions))
+            {
+                jsonObject.Add(new JProperty("permissions", this.Permissions));
+            }
+
+            Console.WriteLine(jsonObject.ToString());
 
             return new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
         }
