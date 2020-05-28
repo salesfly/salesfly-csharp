@@ -1,12 +1,12 @@
 # salesfly-csharp
 
-[![Build Status](https://travis-ci.org/salesfly/salesfly-csharp.svg?branch=master)](https://travis-ci.org/salesfly/salesfly-csharp)
+<!-- [![Build Status](https://travis-ci.org/salesfly/salesfly-csharp.svg?branch=master)](https://travis-ci.org/salesfly/salesfly-csharp) -->
 
-C#/.NET client for [Salesfly API](https://salesfly.com)&reg;
+C#/.NET client for [Salesfly API](https://salesfly.com)&reg;. This client works with [Salesfly e-commerce](https://salesfly.com) and [SalesflyPDF](https://salesflypdf.com).
 
 ## Documentation
 
-See the [C# API docs](https://docs.salesfly.com/csharp/).
+See the [C# API docs](https://developers.salesfly.com/csharp/).
 
 ## Requirements
 
